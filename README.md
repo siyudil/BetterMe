@@ -45,16 +45,7 @@ BetterMe is an Android application that promotes personal wellness and helps use
 3. Let Gradle sync finish.
 4. Run the app on an emulator or a physical Android device.
 
-## Screenshots
-
-_Add screenshots of the Habit Tracker, Mood Journal and Mood Chart screens here._
-
-<!-- Example:
-![Habit Tracker](screenshots/habits.png)
--->
-
 ## Author
 
 **Siyumi Fonseka**
 Data Science undergraduate, Sri Lanka Institute of Information Technology (SLIIT)
-[LinkedIn](https://linkedin.com/in/siyumi-fonseka-61b233385) · [GitHub](https://github.com/siyudil) · [Portfolio](https://siyumi-fonseka.vercel.app)
