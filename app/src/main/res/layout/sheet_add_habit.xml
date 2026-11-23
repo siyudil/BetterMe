@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Header actions + tabs (visual only) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/title_create_new_habit"
+                android:textStyle="bold"
+                android:textSize="18sp"/>
+        </LinearLayout>
+
+        <!-- Habit name -->
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.Material3.TextInputLayout.FilledBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="@string/hint_habit_name">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Icon row (emoji-based quick picks) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_icon"
+                android:textStyle="bold"/>
+            <Space android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/tvViewAllIcons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/action_view_all"
+                android:textColor="@color/colorPrimary"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+            <TextView android:id="@+id/tvIcon1" android:layout_width="36dp" android:layout_height="36dp" android:gravity="center" android:textSize="24sp" android:text="📱" android:background="@drawable/bg_icon_unselect" android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackgroundBorderless"/>
+            <Space android:layout_width="8dp" android:layout_height="0dp"/>
+            <TextView android:id="@+id/tvIcon2" android:layout_width="36dp" android:layout_height="36dp" android:gravity="center" android:textSize="24sp" android:text="⏰" android:background="@drawable/bg_icon_unselect" android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackgroundBorderless"/>
+            <Space android:layout_width="8dp" android:layout_height="0dp"/>
+            <TextView android:id="@+id/tvIcon3" android:layout_width="36dp" android:layout_height="36dp" android:gravity="center" android:textSize="24sp" android:text="💧" android:background="@drawable/bg_icon_unselect" android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackgroundBorderless"/>
+            <Space android:layout_width="8dp" android:layout_height="0dp"/>
+            <TextView android:id="@+id/tvIcon4" android:layout_width="36dp" android:layout_height="36dp" android:gravity="center" android:textSize="24sp" android:text="🏃" android:background="@drawable/bg_icon_unselect" android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackgroundBorderless"/>
+        </LinearLayout>
+
+        <!-- Hidden more icons, revealed by 'View all' -->
+        <LinearLayout
+            android:id="@+id/llMoreIcons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            android:visibility="gone">
+            <TextView android:id="@+id/tvIcon5" android:layout_width="36dp" android:layout_height="36dp" android:gravity="center" android:textSize="24sp" android:text="📚" android:background="@drawable/bg_icon_unselect" android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackgroundBorderless"/>
+            <Space android:layout_width="8dp" android:layout_height="0dp"/>
+            <TextView android:id="@+id/tvIcon6" android:layout_width="36dp" android:layout_height="36dp" android:gravity="center" android:textSize="24sp" android:text="🧘" android:background="@drawable/bg_icon_unselect" android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackgroundBorderless"/>
+            <Space android:layout_width="8dp" android:layout_height="0dp"/>
+            <TextView android:id="@+id/tvIcon7" android:layout_width="36dp" android:layout_height="36dp" android:gravity="center" android:textSize="24sp" android:text="🍎" android:background="@drawable/bg_icon_unselect" android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackgroundBorderless"/>
+            <Space android:layout_width="8dp" android:layout_height="0dp"/>
+            <TextView android:id="@+id/tvIcon8" android:layout_width="36dp" android:layout_height="36dp" android:gravity="center" android:textSize="24sp" android:text="📝" android:background="@drawable/bg_icon_unselect" android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackgroundBorderless"/>
+        </LinearLayout>
+
+        <!-- Even more icons -->
+        <LinearLayout
+            android:id="@+id/llMoreIcons2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            android:visibility="gone">
+            <TextView android:id="@+id/tvIcon9"  android:layout_width="36dp" android:layout_height="36dp" android:gravity="center" android:textSize="24sp" android:text="🏋️" android:background="@drawable/bg_icon_unselect" android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackgroundBorderless"/>
+            <Space android:layout_width="8dp" android:layout_height="0dp"/>
+            <TextView android:id="@+id/tvIcon10" android:layout_width="36dp" android:layout_height="36dp" android:gravity="center" android:textSize="24sp" android:text="🚴" android:background="@drawable/bg_icon_unselect" android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackgroundBorderless"/>
+            <Space android:layout_width="8dp" android:layout_height="0dp"/>
+            <TextView android:id="@+id/tvIcon11" android:layout_width="36dp" android:layout_height="36dp" android:gravity="center" android:textSize="24sp" android:text="🏊" android:background="@drawable/bg_icon_unselect" android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackgroundBorderless"/>
+            <Space android:layout_width="8dp" android:layout_height="0dp"/>
+            <TextView android:id="@+id/tvIcon12" android:layout_width="36dp" android:layout_height="36dp" android:gravity="center" android:textSize="24sp" android:text="🪥" android:background="@drawable/bg_icon_unselect" android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackgroundBorderless"/>
+            <Space android:layout_width="8dp" android:layout_height="0dp"/>
+            <TextView android:id="@+id/tvIcon13" android:layout_width="36dp" android:layout_height="36dp" android:gravity="center" android:textSize="24sp" android:text="🧹" android:background="@drawable/bg_icon_unselect" android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackgroundBorderless"/>
+            <Space android:layout_width="8dp" android:layout_height="0dp"/>
+            <TextView android:id="@+id/tvIcon14" android:layout_width="36dp" android:layout_height="36dp" android:gravity="center" android:textSize="24sp" android:text="🛏️" android:background="@drawable/bg_icon_unselect" android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackgroundBorderless"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llMoreIcons3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            android:visibility="gone">
+            <TextView android:id="@+id/tvIcon15" android:layout_width="36dp" android:layout_height="36dp" android:gravity="center" android:textSize="24sp" android:text="🧑‍🍳" android:background="@drawable/bg_icon_unselect" android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackgroundBorderless"/>
+            <Space android:layout_width="8dp" android:layout_height="0dp"/>
+            <TextView android:id="@+id/tvIcon16" android:layout_width="36dp" android:layout_height="36dp" android:gravity="center" android:textSize="24sp" android:text="🧑‍💻" android:background="@drawable/bg_icon_unselect" android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackgroundBorderless"/>
+            <Space android:layout_width="8dp" android:layout_height="0dp"/>
+            <TextView android:id="@+id/tvIcon17" android:layout_width="36dp" android:layout_height="36dp" android:gravity="center" android:textSize="24sp" android:text="🎯" android:background="@drawable/bg_icon_unselect" android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackgroundBorderless"/>
+            <Space android:layout_width="8dp" android:layout_height="0dp"/>
+            <TextView android:id="@+id/tvIcon18" android:layout_width="36dp" android:layout_height="36dp" android:gravity="center" android:textSize="24sp" android:text="🧠" android:background="@drawable/bg_icon_unselect" android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackgroundBorderless"/>
+            <Space android:layout_width="8dp" android:layout_height="0dp"/>
+            <TextView android:id="@+id/tvIcon19" android:layout_width="36dp" android:layout_height="36dp" android:gravity="center" android:textSize="24sp" android:text="🧑‍🎨" android:background="@drawable/bg_icon_unselect" android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackgroundBorderless"/>
+            <Space android:layout_width="8dp" android:layout_height="0dp"/>
+            <TextView android:id="@+id/tvIcon20" android:layout_width="36dp" android:layout_height="36dp" android:gravity="center" android:textSize="24sp" android:text="📖" android:background="@drawable/bg_icon_unselect" android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackgroundBorderless"/>
+        </LinearLayout>
+
+        <!-- Color palette (static circles as placeholders) -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/label_color"
+            android:textStyle="bold"/>
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:scrollbars="none">
+            <LinearLayout
+                android:id="@+id/llColors"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <!-- Pastel color dots in one line -->
+                <View android:id="@+id/color1" android:layout_width="32dp" android:layout_height="32dp" android:background="@drawable/shape_circle_pastel_pink" android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackgroundBorderless"/>
+                <Space android:layout_width="12dp" android:layout_height="0dp"/>
+                <View android:id="@+id/color2" android:layout_width="32dp" android:layout_height="32dp" android:background="@drawable/shape_circle_pastel_peach" android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackgroundBorderless"/>
+                <Space android:layout_width="12dp" android:layout_height="0dp"/>
+                <View android:id="@+id/color3" android:layout_width="32dp" android:layout_height="32dp" android:background="@drawable/shape_circle_pastel_yellow" android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackgroundBorderless"/>
+                <Space android:layout_width="12dp" android:layout_height="0dp"/>
+                <View android:id="@+id/color4" android:layout_width="32dp" android:layout_height="32dp" android:background="@drawable/shape_circle_pastel_mint" android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackgroundBorderless"/>
+                <Space android:layout_width="12dp" android:layout_height="0dp"/>
+                <View android:id="@+id/color5" android:layout_width="32dp" android:layout_height="32dp" android:background="@drawable/shape_circle_pastel_teal" android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackgroundBorderless"/>
+                <Space android:layout_width="12dp" android:layout_height="0dp"/>
+                <View android:id="@+id/color6" android:layout_width="32dp" android:layout_height="32dp" android:background="@drawable/shape_circle_pastel_blue" android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackgroundBorderless"/>
+                <Space android:layout_width="12dp" android:layout_height="0dp"/>
+                <View android:id="@+id/color7" android:layout_width="32dp" android:layout_height="32dp" android:background="@drawable/shape_circle_pastel_lavender" android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackgroundBorderless"/>
+                <Space android:layout_width="12dp" android:layout_height="0dp"/>
+                <View android:id="@+id/color8" android:layout_width="32dp" android:layout_height="32dp" android:background="@drawable/shape_circle_pastel_lilac" android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackgroundBorderless"/>
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <!-- Repeat (visual only) -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/label_repeat"
+            android:textStyle="bold"/>
+        <com.google.android.material.chip.ChipGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:text="@string/option_daily"
+                android:checked="true"/>
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:text="@string/option_weekly"/>
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:text="@string/option_monthly"/>
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:text="@string/option_one_time"/>
+        </com.google.android.material.chip.ChipGroup>
+
+        <!-- On these days (visual only) -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/label_on_these_days"
+            android:textStyle="bold"/>
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/cgDays"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:singleSelection="false"
+            app:selectionRequired="false">
+            <com.google.android.material.chip.Chip android:id="@+id/daySun" style="@style/Widget.Material3.Chip.Assist" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/abbr_sun" android:checkable="true"/>
+            <com.google.android.material.chip.Chip android:id="@+id/dayMon" style="@style/Widget.Material3.Chip.Assist" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/abbr_mon" android:checkable="true"/>
+            <com.google.android.material.chip.Chip android:id="@+id/dayTue" style="@style/Widget.Material3.Chip.Assist" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/abbr_tue" android:checkable="true"/>
+            <com.google.android.material.chip.Chip android:id="@+id/dayWed" style="@style/Widget.Material3.Chip.Assist" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/abbr_wed" android:checkable="true"/>
+            <com.google.android.material.chip.Chip android:id="@+id/dayThu" style="@style/Widget.Material3.Chip.Assist" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/abbr_thu" android:checkable="true"/>
+            <com.google.android.material.chip.Chip android:id="@+id/dayFri" style="@style/Widget.Material3.Chip.Assist" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/abbr_fri" android:checkable="true"/>
+            <com.google.android.material.chip.Chip android:id="@+id/daySat" style="@style/Widget.Material3.Chip.Assist" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/abbr_sat" android:checkable="true"/>
+        </com.google.android.material.chip.ChipGroup>
+
+        <!-- Do it at (functional - uses existing IDs) -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/label_do_it_at"
+            android:textStyle="bold"/>
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroupTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:singleSelection="true"
+            app:selectionRequired="true">
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipMorning"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_morning"
+                android:checked="true"/>
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipAfternoon"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_afternoon"/>
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipEvening"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_evening"/>
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipNight"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_night"/>
+        </com.google.android.material.chip.ChipGroup>
+
+        <!-- Removed toggles per request -->
+
+        <!-- Save button (functional) -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSave"
+            style="@style/Widget.Material3.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/action_save"/>
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

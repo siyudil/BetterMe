@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.sliit.betterme.ui.splash.SplashFragment"
+        android:label="Splash"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splash_to_onboarding1"
+            app:destination="@id/onboarding1Fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/onboarding1Fragment"
+        android:name="com.sliit.betterme.ui.onboarding.Onboarding1Fragment"
+        android:label="Onboarding1"
+        tools:layout="@layout/fragment_onboarding1">
+        <action
+            android:id="@+id/action_onboarding1_to_onboarding2"
+            app:destination="@id/onboarding2Fragment" />
+        <action
+            android:id="@+id/action_onboarding1_to_signIn"
+            app:destination="@id/signInFragment" />
+        <action
+            android:id="@+id/action_onboarding1_to_signUp"
+            app:destination="@id/signUpFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/onboarding2Fragment"
+        android:name="com.sliit.betterme.ui.onboarding.Onboarding2Fragment"
+        android:label="Onboarding2"
+        tools:layout="@layout/fragment_onboarding2">
+        <action
+            android:id="@+id/action_onboarding2_to_onboarding3"
+            app:destination="@id/onboarding3Fragment" />
+        <action
+            android:id="@+id/action_onboarding2_to_signUp"
+            app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_onboarding2_to_onboarding1"
+            app:destination="@id/onboarding1Fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/onboarding3Fragment"
+        android:name="com.sliit.betterme.ui.onboarding.Onboarding3Fragment"
+        android:label="Onboarding3"
+        tools:layout="@layout/fragment_onboarding3">
+        <action
+            android:id="@+id/action_onboarding3_to_signIn"
+            app:destination="@id/signInFragment" />
+        <action
+            android:id="@+id/action_onboarding3_to_signUp"
+            app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_onboarding3_to_onboarding1"
+            app:destination="@id/onboarding1Fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.sliit.betterme.ui.auth.SignInFragment"
+        android:label="Sign In"
+        tools:layout="@layout/fragment_sign_in">
+        <action
+            android:id="@+id/action_signIn_to_home"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/splashFragment" app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_signIn_to_signUp"
+            app:destination="@id/signUpFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.sliit.betterme.ui.auth.SignUpFragment"
+        android:label="Sign Up"
+        tools:layout="@layout/fragment_sign_up">
+        <action
+            android:id="@+id/action_signUp_to_signIn"
+            app:destination="@id/signInFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.sliit.betterme.ui.home.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home">
+        <action android:id="@+id/action_home_to_mood" app:destination="@id/moodFragment" />
+        <action android:id="@+id/action_home_to_hydration" app:destination="@id/hydrationFragment" />
+        <action android:id="@+id/action_home_to_chart" app:destination="@id/chartFragment" />
+        <action android:id="@+id/action_home_to_settings" app:destination="@id/settingsFragment" />
+        <action android:id="@+id/action_home_to_habits" app:destination="@id/habitsFragment" />
+        <action android:id="@+id/action_home_to_search" app:destination="@id/searchFragment" />
+        <action android:id="@+id/action_home_to_profile" app:destination="@id/profileFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/moodFragment"
+        android:name="com.sliit.betterme.ui.mood.MoodFragment"
+        android:label="Mood"
+        tools:layout="@layout/fragment_mood" />
+
+    <fragment
+        android:id="@+id/hydrationFragment"
+        android:name="com.sliit.betterme.ui.hydration.HydrationFragment"
+        android:label="Hydration"
+        tools:layout="@layout/fragment_hydration" />
+
+    <fragment
+        android:id="@+id/chartFragment"
+        android:name="com.sliit.betterme.ui.chart.ChartFragment"
+        android:label="Chart"
+        tools:layout="@layout/fragment_chart" />
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.sliit.betterme.ui.settings.SettingsFragment"
+        android:label="Settings" />
+
+    <fragment
+        android:id="@+id/notificationsFragment"
+        android:name="com.sliit.betterme.ui.settings.NotificationsFragment"
+        android:label="Notifications"
+        tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.sliit.betterme.ui.profile.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.sliit.betterme.ui.search.SearchFragment"
+        android:label="Search"
+        tools:layout="@layout/fragment_search" />
+
+    <fragment
+        android:id="@+id/habitsFragment"
+        android:name="com.sliit.betterme.ui.habits.HabitsFragment"
+        android:label="Habits"
+        tools:layout="@layout/fragment_habits" />
+
+</navigation>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="700dp"
+    android:height="1000dp"
+    android:viewportWidth="360"
+    android:viewportHeight="360">
+    <!-- Soft pill/cloud shape for mood screen -->
+    <path
+        android:fillColor="#9EF0F6"
+        android:fillAlpha="0.9"
+        android:pathData="M40,150 C40,110 80,90 120,100 C150,70 210,70 240,100 C280,90 320,110 320,150 C320,190 280,215 240,206 C210,236 150,236 120,206 C80,215 40,190 40,150 Z"/>
+</vector>

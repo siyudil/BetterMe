@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ListPreference
+        android:key="hydration_interval"
+        android:title="Hydration reminder interval"
+        android:entries="@array/hydration_entries"
+        android:entryValues="@array/hydration_values"
+        android:defaultValue="60" />
+
+    <Preference
+        android:key="pref_notifications"
+        android:title="Notification" />
+
+    <SwitchPreferenceCompat
+        android:key="pref_dark_mode"
+        android:title="Dark Mode"
+        android:defaultValue="false" />
+
+    <Preference
+        android:key="pref_logout"
+        android:title="Logout" />
+</PreferenceScreen>

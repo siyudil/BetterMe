@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="400dp"
+    android:height="500dp"
+    android:viewportWidth="400"
+    android:viewportHeight="400">
+    <!-- Soft blob background -->
+    <path
+        android:fillColor="#9EF0F6"
+        android:fillAlpha="0.9"
+        android:pathData="M60,120 C60,70 110,40 160,50 C205,58 248,40 284,60 C320,80 312,120 304,160 C296,200 320,240 284,268 C248,296 200,286 160,286 C120,286 80,266 68,228 C56,190 60,170 60,120 Z"/>
+</vector>
